@@ -1,6 +1,6 @@
 ({
-    name: "Ultrasonic", // Category Name
-    description: "Get distance from HC-SR04p",
+    name: "Ultrasonic2", // Category Name
+    description: "Get distance from ultrasonic sensor (support any boards)",
     author: "microBlock",
     category: "Sensors",
     version: "1.0.0",
@@ -10,10 +10,20 @@
         {
             xml: `
                 <block type="ultrasonic_read">
-                    <field name="trig">26</field>
-                    <field name="echo">32</field>
+                    <value name="trig_pin">
+                        <shadow type="math_number">
+                            <field name="NUM">2</field>
+                        </shadow>
+                    </value>
+                    <value name="echo_pin">
+                        <shadow type="math_number">
+                            <field name="NUM">3</field>
+                        </shadow>
+                    </value>
                 </block>
             `
         }
-    ]
+    ], 
+    supportArduinoPlatform: true,
+    depends: [ ] // Arduino library
 });
